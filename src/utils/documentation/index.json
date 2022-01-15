@@ -1,0 +1,177 @@
+{
+    "users": [
+        {
+            "endpoint": "/api/users/register",
+            "action": "POST",
+            "parameters": {
+                "name": "Name Surname",
+                "email":"example@mail.com",
+                "password": "Pass12345!"
+            },
+            "response": {
+                "name": "Name Surname",
+                "email":"example@mail.com"
+            }
+        },
+
+        {
+            "endpoint": "/api/users/login",
+            "action": "POST",
+            "parameters": {
+                "email":"example@mail.com",
+                "password": "Pass12345!"
+            },
+            "response": "Token (24h expires)"
+        },
+
+        {
+            "endpoint": "/api/users/logout",
+            "action": "POST",
+            "parameters": {
+                "email":"example@mail.com",
+                "password": "Pass12345!"
+            },
+            "response": "null"
+        }
+        
+    ],
+
+    "expos": [
+        {
+            "endpoint": "/api/expos",
+            "action": "GET",
+            "response": {
+                
+                    "_id": "61e19c931b884b383c3d51e4",
+                    "name": "IAA Frankfurt",
+                    "year": 2021,
+                    "country": "Germany",
+                    "vehicles": [
+                        {
+                            "_id": "61e142bb29a20cf74b7ecc27",
+                            "name": "Audi A1",
+                            "type": "Turismo",
+                            "year": 2021,
+                            "img": "https://res.cloudinary.com/dtaz65dmf/image/upload/v1642152634/DAG-coches/yucmlcmffznz1xhrhxcb.jpg",
+                            "createdAt": "2022-01-14T09:30:35.208Z",
+                            "updatedAt": "2022-01-14T09:30:35.208Z",
+                            "__v": 0,
+                            "brand": "Audi"
+                        }
+                    ]         
+                }
+            },
+
+         {
+            "endpoint": "/api/expos/filter/:id", 
+            "description": "You can search Expositions by country: Germany, Japan, Switzerland, France",
+            "endpointExample" :"/api/expos/filter/Japan",
+            "action": "GET",
+            "response": {    
+                
+                    "_id": "61e19c931b884b383c3d51e7",
+                    "name": "Tokyo Motor Show",
+                    "year": 2022,
+                    "country": "Japan",
+                    "vehicles": [
+                        {
+                            "_id": "61e1447529a20cf74b7ecc39",
+                            "name": "Audi A2",
+                            "type": "Turismo",
+                            "year": 2009,
+                            "img": "https://res.cloudinary.com/dtaz65dmf/image/upload/v1642153077/DAG-coches/sbvjxvlicorbqaj6q8cw.jpg",
+                            "createdAt": "2022-01-14T09:37:57.982Z",
+                            "updatedAt": "2022-01-14T09:37:57.982Z",
+                            "__v": 0,
+                            "brand": "Audi"
+                        }
+                    ]
+                 }
+        
+        }
+    ],
+
+    "vehicles": [
+        {
+            "endpoint": "/api/vehicles",
+            "action": "GET",
+            "response": [
+                {
+                    "_id": "61e14c3628733f0d8bea5b48",
+                    "name": "I8",
+                    "type": "Eléctrico",
+                    "year": 2022,
+                    "img": "https://res.cloudinary.com/dtaz65dmf/image/upload/v1642155071/DAG-coches/nhlu3spmsf6zc5npm0cb.jpg",
+                    "createdAt": "2022-01-14T10:11:02.407Z",
+                    "updatedAt": "2022-01-14T10:11:02.407Z",
+                    "__v": 0,
+                    "brand": "BMW"
+                },
+                {
+                    "_id": "61e1505628733f0d8bea5b4e",
+                    "name": "M1",
+                    "type": "Deportivo",
+                    "year": 1978,
+                    "img": "https://res.cloudinary.com/dtaz65dmf/image/upload/v1642156128/DAG-coches/vh5fzhz3g9zbh9vcsvwr.jpg",
+                    "createdAt": "2022-01-14T10:28:38.614Z",
+                    "updatedAt": "2022-01-14T10:28:38.614Z",
+                    "__v": 0,
+                    "brand": "BMW"
+                }
+            ]
+        },
+
+        {
+            "endpoint": "/api/vehicles/filter/:type", 
+            "description": "You can search Vehicles by Type: Turismo, Deportivo, Descapotable, Eléctrico, 4x4, Coupé, Híbrido",
+            "endpointExample" :"/api/vehicles/filter/Híbrido",
+            "action": "GET",
+            "response": [
+                 { 
+            
+                        "_id": "61e144f929a20cf74b7ecc3f",
+                        "name": "Audi A4",
+                        "type": "Híbrido",
+                        "year": 2014,
+                        "img": "https://res.cloudinary.com/dtaz65dmf/image/upload/v1642153208/DAG-coches/to3wrjsdjx8v2tbknpah.jpg",
+                        "createdAt": "2022-01-14T09:40:09.356Z",
+                        "updatedAt": "2022-01-14T09:40:09.356Z",
+                        "__v": 0,
+                        "brand": "Audi"
+                    }
+                ]
+        },
+
+        {
+            "endpoint": "/api/vehicles/:id", 
+            "endpointExample" :"/api/vehicles/61e14c3628733f0d8bea5b48",
+            "action": "GET",
+            "response": [
+                {
+                    "_id": "61e14c3628733f0d8bea5b48",
+                    "name": "I8",
+                    "type": "Eléctrico",
+                    "year": 2022,
+                    "img": "https://res.cloudinary.com/dtaz65dmf/image/upload/v1642155071/DAG-coches/nhlu3spmsf6zc5npm0cb.jpg",
+                    "createdAt": "2022-01-14T10:11:02.407Z",
+                    "updatedAt": "2022-01-14T10:11:02.407Z",
+                    "__v": 0,
+                    "brand": "BMW"
+                }
+            ]
+        }
+
+
+
+            
+
+
+
+
+
+    ]
+
+    
+        
+
+}

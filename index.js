@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const cloudinary = require('cloudinary').v2
+const documentation = require('./src/utils/documentation/index.json')
 const UserRoutes = require('./src/api/user/user.routes')
 const VehicleRoutes = require('./src/api/vehicle/vehicle.routes')
 const ExpoRoutes = require('./src/api/expo/expo.routes')
@@ -39,8 +40,9 @@ app.use(express.urlencoded({ limit: '5mb', extended: true }))
 app.use('/api/users', UserRoutes)
 app.use('/api/vehicles', VehicleRoutes)
 app.use('/api/expos', ExpoRoutes)
+
 app.use('/', (req, res, next) => {
-    return res.json('VEHICLE DAG SERVE')
+    return res.json(documentation)
 })
 
 app.use('*', (req, res, next) => {

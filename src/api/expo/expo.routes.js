@@ -6,8 +6,9 @@ const { postNewExpo, getAllExpos, getExpo, getExpoFilter } = require('./expo.con
 
 ExpoRoutes.get('/', getAllExpos)
 ExpoRoutes.get('/:id', getExpo)
-ExpoRoutes.post('/', [isAuth], upload.single('img'), postNewExpo)
-ExpoRoutes.get('/filter/:id', getExpoFilter)
+ExpoRoutes.get('/filter/:country', getExpoFilter)
+
+//ExpoRoutes.post('/', [isAuth], upload.single('img'), postNewExpo)
 
 //ejecutarlo en linea 4.
 /* ExpoRoutes.patch('/:id', [isAuth], upload.single('img'), patchExpo)

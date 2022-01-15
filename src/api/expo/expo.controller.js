@@ -44,13 +44,13 @@ const getExpo = async (req, res, next) => {
 
 const getExpoFilter = async (req, res, next) => {
     try {
-        const { id } = req.params
-        console.log(id);
+        const { country } = req.params
+        console.log(country);
         const expoDB = await Expo.find({
-            country: id
+            country: country
         }).populate('vehicles')
         if (!expoDB) {
-            return next(setError(404, ` ${id} not found`))
+            return next(setError(404, ` ${country} not found`))
         }
         return res.status(200).json(expoDB)
     } catch (error) {
