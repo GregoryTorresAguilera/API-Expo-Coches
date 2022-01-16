@@ -2,7 +2,6 @@ const Expo = require('./expo.model')
 const { setError } = require('../../utils/error/error')
 const { deleteFile } = require('../../middlewares/deleteFile')
 
-
 const postNewExpo = async (req, res, next) => {
     try {
         const newExpo = new Expo()

@@ -6,7 +6,7 @@
             "parameters": {
                 "name": "Name Surname",
                 "email":"example@mail.com",
-                "password": "Pass12345!"
+                "password": "Pass12345! [(Should contain a min/max of 8/12 characters, using a mix of uppercase and lowercase letters, numbers, and special characters.)]"  
             },
             "response": {
                 "name": "Name Surname",
@@ -27,6 +27,7 @@
         {
             "endpoint": "/api/users/logout",
             "action": "POST",
+            "authentication":{ "bearerToken":"token"},
             "parameters": {
                 "email":"example@mail.com",
                 "password": "Pass12345!"
@@ -40,6 +41,7 @@
         {
             "endpoint": "/api/expos",
             "action": "GET",
+            "authentication":{ "bearerToken":"token"},
             "response": {
                 
                     "_id": "61e19c931b884b383c3d51e4",
@@ -63,10 +65,11 @@
             },
 
          {
-            "endpoint": "/api/expos/filter/:id", 
+            "endpoint": "/api/expos/filter/:country", 
             "description": "You can search Expositions by country: Germany, Japan, Switzerland, France",
             "endpointExample" :"/api/expos/filter/Japan",
             "action": "GET",
+            "authentication":{ "bearerToken":"token"},
             "response": {    
                 
                     "_id": "61e19c931b884b383c3d51e7",
@@ -126,6 +129,7 @@
             "description": "You can search Vehicles by Type: Turismo, Deportivo, Descapotable, Eléctrico, 4x4, Coupé, Híbrido",
             "endpointExample" :"/api/vehicles/filter/Híbrido",
             "action": "GET",
+            "authentication":{ "bearerToken":"token"},
             "response": [
                  { 
             
@@ -160,18 +164,5 @@
                 }
             ]
         }
-
-
-
-            
-
-
-
-
-
     ]
-
-    
-        
-
 }
